@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_2056537_medica_0.user" name="x_2056537_medica_0.user">ea92212e8347c714a71653b6feaad33a</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-03 17:56:16</sys_created_on>
+        <sys_id>a292212e8347c714a71653b6feaad33d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ea92212e8347c714a71653b6feaad33a</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_update_name>sys_embedded_help_role_a292212e8347c714a71653b6feaad33d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-03 17:56:16</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
