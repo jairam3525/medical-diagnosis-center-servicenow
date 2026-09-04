@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 01:27:48</sys_created_on>
+        <sys_id>89f9072a83830b14a71653b6feaad39d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2056537_medica_0_report_table.x_2056537_medica_0.admin</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_security_acl display_value="x_2056537_medica_0_report_table">70f9c32a83830b14a71653b6feaad3da</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_89f9072a83830b14a71653b6feaad39d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 01:27:48</sys_updated_on>
+        <sys_user_role display_value="x_2056537_medica_0.admin" name="x_2056537_medica_0.admin">e292212e8347c714a71653b6feaad309</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

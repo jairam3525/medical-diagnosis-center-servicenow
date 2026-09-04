@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="7e85cfae83430b14a71653b6feaad346" label="DIAGNOSTIC TEST" max_length="40" name="x_2056537_medica_0_diagnostic_test" type="collection">
+        <element label="Price" max_length="40" name="price" type="currency"/>
+        <element label="Test Duration" max_length="40" name="test_duration" type="string"/>
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element choice="3" label="Category" max_length="255" name="category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Pathology" sequence="3" value="pathology"/>
+                <element inactive_on_update="false" label="Radiology" sequence="1" value="radiology"/>
+                <element inactive_on_update="false" label="BloodTest" sequence="0" value="bloodtest"/>
+                <element inactive_on_update="false" label="Scan" sequence="7" value="scan"/>
+                <element inactive_on_update="false" label="MRI" sequence="5" value="mri"/>
+                <element inactive_on_update="false" label="CT" sequence="6" value="ct"/>
+                <element inactive_on_update="false" label="Ultrasound" sequence="4" value="ultrasound"/>
+                <element inactive_on_update="false" label="Cardiology" sequence="2" value="cardiology"/>
+                <element inactive_on_update="false" label="Other" sequence="8" value="other"/>
+            </choice>
+        </element>
+        <element label="Description" max_length="1000" name="description" type="string"/>
+        <element label="Test Code" max_length="40" name="test_code" type="string"/>
+        <element label="Test Name" max_length="40" name="test_name" type="string"/>
+    </element>
+</database>

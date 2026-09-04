@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="77e9c32a83830b14a71653b6feaad3a1" label="REPORT TABLE" max_length="40" name="x_2056537_medica_0_report_table" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Report Date" max_length="40" name="report_date" type="glide_date_time"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Appointment" max_length="32" name="appointment" reference="x_2056537_medica_0_appointment_table" type="reference"/>
+        <element label="Patient" max_length="32" name="patient" reference="x_2056537_medica_0_patient" type="reference"/>
+        <element label="Findings" max_length="8000" name="findings" type="html"/>
+        <element label="Report File" max_length="40" name="report_file" type="file_attachment"/>
+        <element label="Verified By" max_length="32" name="verified_by" reference="sys_user" type="reference"/>
+        <element label="Report Number" max_length="40" name="report_number" type="string"/>
+        <index name="index">
+            <element name="appointment"/>
+        </index>
+        <index name="index2">
+            <element name="patient"/>
+        </index>
+        <index name="index3">
+            <element name="verified_by"/>
+        </index>
+    </element>
+</database>

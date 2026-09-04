@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="New section 1" section_id="008907e683830b14a71653b6feaad323" sys_domain="global" table="x_2056537_medica_0_patient" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>address</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-04 01:25:50</sys_created_on>
+            <sys_id>cc8907e683830b14a71653b6feaad35a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="New section 1" display_value="New section 1" name="x_2056537_medica_0_patient" sys_domain="global" view="Default view">008907e683830b14a71653b6feaad323</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-04 01:25:50</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>New section 1</caption>
+            <header>false</header>
+            <name>x_2056537_medica_0_patient</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-04 01:25:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>008907e683830b14a71653b6feaad323</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2056537_medica_0_patient</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+            <sys_update_name>sys_ui_section_008907e683830b14a71653b6feaad323</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-04 01:25:49</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</application>
+        <file_path/>
+        <instance_id>2fe5db8cdb35bd90caf99027c59619e9</instance_id>
+        <instance_name>dev181827</instance_name>
+        <name>sys_ui_section_008907e683830b14a71653b6feaad323</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="New section 1" section_id="008907e683830b14a71653b6feaad323" sys_domain="global" table="x_2056537_medica_0_patient" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>address</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-04 01:25:50</sys_created_on><sys_id>cc8907e683830b14a71653b6feaad35a</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="New section 1" display_value="New section 1" name="x_2056537_medica_0_patient" sys_domain="global" view="Default view">008907e683830b14a71653b6feaad323</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-04 01:25:50</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>New section 1</caption><header>false</header><name>x_2056537_medica_0_patient</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-04 01:25:49</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>008907e683830b14a71653b6feaad323</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2056537_medica_0_patient</sys_name><sys_overrides/><sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package><sys_policy/><sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope><sys_update_name>sys_ui_section_008907e683830b14a71653b6feaad323</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-04 01:25:49</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>-849824371</payload_hash>
+        <record_name>Patient</record_name>
+        <reverted_from/>
+        <source>f064a9ee8347c714a71653b6feaad3aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 01:25:50</sys_created_on>
+        <sys_id>4c8907e683830b14a71653b6feaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a06a05a80f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 01:25:50</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>008907e695830b141b0efd0a24c7416a</update_guid>
+        <update_guid_history>008907e695830b141b0efd0a24c7416a:-849824371</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 01:26:15</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>032b0247bbcd4ec0804bba868ec56400</sys_id>
+        <sys_metadata>008907e683830b14a71653b6feaad323</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New section 1</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_parent display_value="Medica 0 Patient">d338c72683830b14a71653b6feaad399</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_scope_delete display_value="">9e90aa91452340a8ad5131bd83bca639</sys_scope_delete>
+        <sys_update_name>sys_ui_section_008907e683830b14a71653b6feaad323</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_008907e683830b14a71653b6feaad323">4c8907e683830b14a71653b6feaad36a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 01:26:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
