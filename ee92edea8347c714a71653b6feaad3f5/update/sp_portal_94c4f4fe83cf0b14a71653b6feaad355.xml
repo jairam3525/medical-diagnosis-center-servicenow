@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <alternate_portal/>
+        <communication_channels/>
+        <css_variables>/* ── Animations ── */
+@keyframes shimmer {
+  0%   { background-position: -300% center; }
+  100% { background-position: 300% center; }
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0,180,216,0.4), 0 0 20px rgba(0,180,216,0.15); }
+  50%       { box-shadow: 0 0 18px rgba(0,180,216,0.8), 0 0 40px rgba(0,180,216,0.3); }
+}
+@keyframes heartbeat {
+  0%,100% { transform: scaleX(1); }
+  10%     { transform: scaleX(1.06); }
+  20%     { transform: scaleX(1); }
+  30%     { transform: scaleX(1.04); }
+  40%     { transform: scaleX(1); }
+}
+@keyframes taglineSlide {
+  from { opacity: 0; letter-spacing: 6px; }
+  to   { opacity: 1; letter-spacing: 3px; }
+}
+@keyframes ecgMove {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+ .navbar-brand,
+.sp-nav .navbar-brand {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  padding: 7px 18px 7px 14px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 180, 216, 0.35) !important;
+  background: linear-gradient(135deg,
+    rgba(10, 36, 99, 0.6) 0%,
+    rgba(0, 60, 100, 0.4) 100%
+  ) !important;
+  backdrop-filter: blur(8px) !important;
+  animation: pulse 3s ease-in-out infinite !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  /* ECG / heartbeat line as bottom border */
+  border-bottom: 2px solid transparent !important;
+  background-clip: padding-box !important;
+}
+/* ── Glowing ECG line at the bottom of the brand box ── */
+.navbar-brand::after,
+.sp-nav .navbar-brand::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #e63946     15%,
+    #e63946     20%,
+    transparent 25%,
+    #e63946     30%,
+    transparent 32%,
+    #e63946     36%,
+    transparent 40%,
+    #00b4d8     55%,
+    #7dd3fc     70%,
+    transparent 100%
+  ) !important;
+  background-size: 200% 100% !important;
+  animation: ecgMove 2.5s linear infinite !important;
+  border-radius: 2px !important;
+}
+/* ── MDC badge before the text ── */
+.navbar-brand::before,
+.sp-nav .navbar-brand::before {
+  content: 'MDC' !important;
+  font-family: 'Segoe UI', 'Trebuchet MS', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  margin-right: 10px !important;
+  background: linear-gradient(135deg, #e63946 0%, #c1121f 100%) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(230, 57, 70, 0.5) !important;
+  flex-shrink: 0 !important;
+  animation: heartbeat 2s ease-in-out infinite !important;
+}
+.navbar-brand,
+.navbar-brand span,
+.sp-nav .navbar-brand {
+  font-family: 'Segoe UI', 'Trebuchet MS', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  /* Animated shimmer gradient — white → cyan → white */
+  background: linear-gradient(
+    90deg,
+    #ffffff  0%,
+    #bfefff 20%,
+    #00b4d8 35%,
+    #ffffff 50%,
+    #7dd3fc 65%,
+    #00b4d8 80%,
+    #ffffff 100%
+  ) !important;
+  background-size: 300% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: shimmer 4s linear infinite, pulse 3s ease-in-out infinite !important;
+  text-shadow: none !important;
+  text-decoration: none !important;
+}
+/* ── Hover — shimmer speeds up, glow intensifies ── */
+.navbar-brand:hover,
+.sp-nav .navbar-brand:hover {
+  border-color: rgba(0, 180, 216, 0.7) !important;
+  background: linear-gradient(135deg,
+    rgba(10, 36, 99, 0.8) 0%,
+    rgba(0, 80, 130, 0.6) 100%
+  ) !important;
+  animation: shimmer 1.5s linear infinite, pulse 1s ease-in-out infinite !important;
+  text-decoration: none !important;
+  transform: translateY(-1px) !important;
+}
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .navbar-brand,
+  .navbar-brand span,
+  .sp-nav .navbar-brand {
+    font-size: 12px !important;
+    letter-spacing: 0.8px !important;
+    padding: 5px 10px 5px 8px !important;
+  }
+  .navbar-brand::before,
+  .sp-nav .navbar-brand::before {
+    font-size: 10px !important;
+    padding: 2px 6px !important;
+    margin-right: 7px !important;
+  }
+}</css_variables>
+        <dark_theme/>
+        <default>false</default>
+        <embeddable_macroponents/>
+        <enable_ais>false</enable_ais>
+        <enable_certificate_based_authentication>false</enable_certificate_based_authentication>
+        <enable_embeddables>false</enable_embeddables>
+        <enable_favorites>false</enable_favorites>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage display_value="test_catalog">3b450d3283834b14a71653b6feaad3d7</homepage>
+        <icon/>
+        <inactive>false</inactive>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page/>
+        <logo/>
+        <logo_alt_text>Jayaram</logo_alt_text>
+        <notfound_page/>
+        <quick_start_config/>
+        <rtl_enabled>false</rtl_enabled>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <search_application/>
+        <search_results_configuration/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 09:17:09</sys_created_on>
+        <sys_id>94c4f4fe83cf0b14a71653b6feaad355</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Medical Diagnostic Center</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_update_name>sp_portal_94c4f4fe83cf0b14a71653b6feaad355</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 10:34:16</sys_updated_on>
+        <theme display_value="Stock">79315153cb33310000f8d856634c9c4b</theme>
+        <title>Medical Diagnostic Center</title>
+        <ts_index_group/>
+        <url_suffix>mdc</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=94c4f4fe83cf0b14a71653b6feaad355"/>
+</record_update>

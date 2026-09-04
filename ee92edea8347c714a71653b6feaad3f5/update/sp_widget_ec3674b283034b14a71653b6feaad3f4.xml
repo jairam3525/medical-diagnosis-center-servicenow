@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  var c = this;
+  c.searchQuery = '';
+  c.activeCategory = 'all';
+  c.sortBy = 'name';
+  c.filteredTests = [];
+  var ICONS = {
+    'blood': ']]>🩸<![CDATA[', 'blood test': ']]>🩸<![CDATA[', 'urine': ']]>🧪<![CDATA[',
+    'imaging': ']]>🩻<![CDATA[', 'radiology': ']]>🩻<![CDATA[', 'cardiology': '❤️',
+    'neurology': ']]>🧠<![CDATA[', 'pathology': ']]>🔬<![CDATA[', 'microbiology': ']]>🦠<![CDATA[',
+    'biochemistry': '⚗️', 'genetics': ']]>🧬<![CDATA[', 'allergy': ']]>🌿<![CDATA[',
+    'covid': ']]>😷<![CDATA[', 'diabetes': ']]>💉<![CDATA[', 'thyroid': ']]>🦋<![CDATA[',
+    'liver': ']]>🫁<![CDATA[', 'kidney': ']]>🫘<![CDATA[', 'vitamin': ']]>💊<![CDATA[',
+    'iron': ']]>🔩<![CDATA[', 'ecg': '❤️', 'x-ray': ']]>🩻<![CDATA[', 'xray': ']]>🩻<![CDATA['
+  };
+  c.getCategoryIcon = function(category) {
+    if (!category) return ']]>🔬<![CDATA[';
+    var key = category.toLowerCase();
+    for (var k in ICONS) {
+      if (key.indexOf(k) !== -1) return ICONS[k];
+    }
+    return ']]>🔬<![CDATA[';
+  };
+  c.truncate = function(text, length) {
+    if (!text) return 'No description available.';
+    return text.length > length ? text.substring(0, length) + '...' : text;
+  };
+  c.filterTests = function() {
+    var all = c.data.tests || [];
+    var q = (c.searchQuery || '').toLowerCase().trim();
+    var cat = c.activeCategory;
+    c.filteredTests = all.filter(function(t) {
+      var matchSearch = !q ||
+        (t.test_name && t.test_name.toLowerCase().indexOf(q) !== -1) ||
+        (t.description && t.description.toLowerCase().indexOf(q) !== -1) ||
+        (t.test_code && t.test_code.toLowerCase().indexOf(q) !== -1) ||
+        (t.category && t.category.toLowerCase().indexOf(q) !== -1);
+      var matchCat = (cat === 'all') || (t.category === cat);
+      return matchSearch && matchCat;
+    });
+    c.sortTests();
+  };
+  c.sortTests = function() {
+    var t = c.filteredTests;
+    if (c.sortBy === 'name') {
+      t.sort(function(a, b) { return (a.test_name || '').localeCompare(b.test_name || ''); });
+    } else if (c.sortBy === 'price_asc') {
+      t.sort(function(a, b) { return (a.price || 0) - (b.price || 0); });
+    } else if (c.sortBy === 'price_desc') {
+      t.sort(function(a, b) { return (b.price || 0) - (a.price || 0); });
+    } else if (c.sortBy === 'duration') {
+      t.sort(function(a, b) { return (a.test_duration || '').localeCompare(b.test_duration || ''); });
+    }
+  };
+  c.setCategory = function(cat) {
+    c.activeCategory = cat;
+    c.filterTests();
+  };
+  c.clearSearch = function() {
+    c.searchQuery = '';
+    c.filterTests();
+  };
+  c.resetFilters = function() {
+    c.searchQuery = '';
+    c.activeCategory = 'all';
+    c.sortBy = 'name';
+    c.filterTests();
+  };
+  var _getPortal = function() {
+    return window.location.pathname.split('/')[1] || 'sp';
+  };
+  c.bookTest = function(test) {
+    sessionStorage.setItem('selected_test_sys_id', test.sys_id);
+    sessionStorage.setItem('selected_test_name', test.test_name || '');
+    sessionStorage.setItem('selected_test_price', test.price || 0);
+    sessionStorage.setItem('selected_test_code', test.test_code || '');
+    sessionStorage.setItem('selected_test_category', test.category || '');
+    sessionStorage.setItem('selected_test_duration', test.test_duration || '');
+    window.location.href = '/' + _getPortal() + '?id=appointment_booking';
+  };
+  c.goToMyBookings = function() {
+    window.location.href = '/' + _getPortal() + '?id=my_appointments';
+  };
+  c.goToMyReports = function() {
+    window.location.href = '/' + _getPortal() + '?id=lab_reports';
+  };
+  // INIT
+  c.filteredTests = angular.copy(c.data.tests || []);
+  c.data.totalTests = c.filteredTests.length;
+  c.sortTests();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.med-catalog {
+  --primary: #0a2463;
+  --primary-light: #1e3a8a;
+  --accent: #00b4d8;
+  --accent-dark: #0096c7;
+  --success: #10b981;
+  --danger: #ef4444;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.14);
+  --radius: 16px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--gray-50);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* HERO */
+.hero-banner {
+  background: linear-gradient(135deg, #0a2463 0%, #1e3a8a 60%, #0369a1 100%);
+  padding: 60px 40px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 40px 40px;
+}
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 340px; height: 340px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.hero-content { flex: 1; position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.20);
+  color: #bfdbfe;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.pulse-dot {
+  width: 8px; height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(1.4); }
+}
+.hero-title {
+  font-size: 46px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  letter-spacing: -1px;
+}
+.accent-text { color: #00b4d8; }
+.hero-sub { color: #bfdbfe; font-size: 16px; margin: 0 0 32px; }
+
+/* SEARCH */
+.search-wrap { position: relative; max-width: 520px; }
+.search-icon {
+  position: absolute; left: 16px; top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8; font-size: 16px;
+}
+.search-input {
+  width: 100%;
+  padding: 16px 48px 16px 46px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  font-size: 15px;
+  background: rgba(255,255,255,0.95);
+  color: #1e293b;
+  outline: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.search-input:focus { border-color: #00b4d8; box-shadow: 0 4px 20px rgba(0,180,216,0.25); }
+.search-clear {
+  position: absolute; right: 14px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 15px;
+}
+
+/* HERO VISUAL */
+.hero-visual { position: relative; z-index: 1; margin-left: 60px; }
+.dna-icon {
+  font-size: 100px;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 8px 24px rgba(0,180,216,0.3));
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+.float-stat {
+  position: absolute;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-1 { top: -10px; right: -40px; }
+.stat-2 { bottom: -10px; right: -20px; }
+.stat-num { font-size: 22px; font-weight: 800; color: #ffffff; line-height: 1; }
+.stat-lbl { font-size: 11px; color: #bfdbfe; margin-top: 2px; white-space: nowrap; }
+
+/* CATEGORY BAR */
+.category-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 40px 0;
+  flex-wrap: wrap;
+}
+.cat-tab {
+  padding: 9px 20px;
+  border-radius: 24px;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.cat-tab:hover { border-color: #00b4d8; color: #0096c7; }
+.cat-tab.active {
+  background: #0a2463;
+  border-color: #0a2463;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(10,36,99,0.25);
+}
+
+/* RESULTS BAR */
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.results-count { color: #475569; font-size: 14px; }
+.results-count strong { color: #0a2463; }
+.results-count em { font-style: italic; color: #0096c7; }
+.sort-wrap { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #475569; }
+.sort-select {
+  padding: 6px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #ffffff;
+  color: #1e293b;
+  cursor: pointer;
+  outline: none;
+}
+.sort-select:focus { border-color: #00b4d8; }
+
+/* EMPTY STATE */
+.empty-state { text-align: center; padding: 80px 40px; }
+.empty-icon { font-size: 64px; margin-bottom: 16px; }
+.empty-state h3 { font-size: 22px; color: #1e293b; margin: 0 0 8px; }
+.empty-state p { color: #475569; margin: 0 0 24px; }
+.btn-reset {
+  padding: 10px 24px;
+  background: #0a2463;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-reset:hover { background: #1e3a8a; }
+
+/* GRID */
+.tests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 24px 40px;
+}
+
+/* CARD */
+.test-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.test-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  border-color: #00b4d8;
+}
+
+/* CARD HEADER */
+.card-header {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 20px 20px 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+}
+.test-icon-wrap {
+  width: 52px; height: 52px;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+.card-badges { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+.badge { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; }
+.badge-cat    { background: #dbeafe; color: #1d4ed8; }
+.badge-active { background: #dcfce7; color: #15803d; }
+.badge-inactive { background: #fee2e2; color: #b91c1c; }
+
+/* CARD BODY */
+.card-body { padding: 20px; flex: 1; }
+.test-name { font-size: 17px; font-weight: 700; color: #1e293b; margin: 0 0 6px; line-height: 1.3; }
+.test-code { font-size: 12px; color: #94a3b8; margin: 0 0 10px; font-family: 'Courier New', monospace; }
+.test-code strong { color: #0a2463; }
+.test-desc { font-size: 13px; color: #475569; line-height: 1.6; margin: 0 0 16px; }
+.test-meta { display: flex; gap: 16px; }
+.meta-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #475569; }
+.meta-item .fa { color: #00b4d8; font-size: 13px; }
+
+/* CARD FOOTER */
+.card-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+}
+.price-block { display: flex; flex-direction: column; }
+.price-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+.price-value { font-size: 24px; font-weight: 800; color: #0a2463; line-height: 1.1; }
+.btn-book {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0,150,199,0.30);
+}
+.btn-book:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,150,199,0.40); }
+.btn-book.btn-disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-banner { flex-direction: column; padding: 40px 24px 50px; }
+  .hero-visual  { display: none; }
+  .hero-title   { font-size: 32px; }
+  .tests-grid   { grid-template-columns: 1fr; padding: 16px 20px; }
+  .category-bar { padding: 20px 20px 0; }
+  .results-bar  { padding: 16px 20px 8px; }
+}
+
+/* QUICK ACTION CARDS */
+.quick-actions-bar {
+  display: flex;
+  gap: 16px;
+  padding: 28px 40px 0;
+  flex-wrap: wrap;
+}
+
+.quick-action-card {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.quick-action-card:hover {
+  border-color: #00b4d8;
+  box-shadow: 0 8px 24px rgba(0,180,216,0.15);
+  transform: translateY(-3px);
+}
+
+.qa-icon {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.qa-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.qa-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0a2463;
+}
+
+.qa-sub {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.qa-arrow {
+  color: #00b4d8;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .quick-actions-bar {
+    padding: 20px 20px 0;
+    flex-direction: column;
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Widget to display and manage functionalities</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>medical_test_catalog</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Medical Test Catalog</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  data.tests = [];
+  data.categories = [];
+  data.totalTests = 0;
+  try {
+    var testGr = new GlideRecord('x_2056537_medica_0_diagnostic_test');
+    testGr.orderBy('test_name');
+    testGr.query();
+    var categorySet = {};
+    var categoryList = [];
+    while (testGr.next()) {
+      var categoryDisplay = testGr.getDisplayValue('category') || testGr.getValue('category') || 'General';
+      var activeVal = testGr.getValue('active');
+      var isActive = (activeVal === '1' || activeVal === 'true' || activeVal === true);
+      data.tests.push({
+        sys_id:        testGr.getUniqueValue(),
+        test_name:     testGr.getValue('test_name')     || '',
+        test_code:     testGr.getValue('test_code')     || '',
+        category:      categoryDisplay,
+        description:   testGr.getValue('description')   || '',
+        price:         parseFloat(testGr.getValue('price')) || 0,
+        test_duration: testGr.getValue('test_duration') || '',
+        active:        isActive
+      });
+      if (categoryDisplay && !categorySet[categoryDisplay]) {
+        categorySet[categoryDisplay] = true;
+        categoryList.push(categoryDisplay);
+      }
+    }
+    categoryList.sort();
+    data.categories = categoryList;
+    data.totalTests = data.tests.length;
+  } catch(e) {
+    data.error = e.message;
+    gs.error('MediCare Catalog Error: ' + e.message);
+  }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 09:21:43</sys_created_on>
+        <sys_id>ec3674b283034b14a71653b6feaad3f4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Medical Test Catalog</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_update_name>sp_widget_ec3674b283034b14a71653b6feaad3f4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 09:33:43</sys_updated_on>
+        <template><![CDATA[<div class="med-catalog">
+<!-- HERO -->
+<div class="hero-banner">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="pulse-dot"></span>Trusted Diagnostics</div>
+    <h1 class="hero-title">Medical Diagnostic<br><span class="accent-text">Test Center</span></h1>
+    <p class="hero-sub">Advanced lab tests. Fast results. Transparent pricing.</p>
+    <div class="search-wrap">
+      <i class="fa fa-search search-icon"></i>
+      <input class="search-input" type="text" placeholder="Search tests, categories..."
+        ng-model="c.searchQuery" ng-change="c.filterTests()" />
+      <button class="search-clear" ng-if="c.searchQuery" ng-click="c.clearSearch()">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="dna-icon">]]>🧬<![CDATA[</div>
+    <div class="float-stat stat-1">
+      <span class="stat-num">{{c.data.totalTests}}</span>
+      <span class="stat-lbl">Tests Available</span>
+    </div>
+    <div class="float-stat stat-2">
+      <span class="stat-num">24h</span>
+      <span class="stat-lbl">Avg Report Time</span>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK ACTION CARDS -->
+<div class="quick-actions-bar">
+  <div class="quick-action-card" ng-click="c.goToMyBookings()">
+    <div class="qa-icon">]]>📋<![CDATA[</div>
+    <div class="qa-info">
+      <span class="qa-title">My Bookings</span>
+      <span class="qa-sub">View your appointment history</span>
+    </div>
+    <i class="fa fa-chevron-right qa-arrow"></i>
+  </div>
+  <div class="quick-action-card" ng-click="c.goToMyReports()">
+    <div class="qa-icon">]]>📄<![CDATA[</div>
+    <div class="qa-info">
+      <span class="qa-title">My Reports</span>
+      <span class="qa-sub">Access your lab test results</span>
+    </div>
+    <i class="fa fa-chevron-right qa-arrow"></i>
+  </div>
+</div>
+
+<!-- CATEGORY TABS -->
+<div class="category-bar">
+  <button class="cat-tab" ng-class="{'active': c.activeCategory === 'all'}" ng-click="c.setCategory('all')">
+    <i class="fa fa-th"></i> All Tests
+  </button>
+  <button class="cat-tab" ng-repeat="cat in c.data.categories"
+    ng-class="{'active': c.activeCategory === cat}" ng-click="c.setCategory(cat)">
+    {{cat}}
+  </button>
+</div>
+
+<!-- RESULTS BAR -->
+<div class="results-bar">
+  <span class="results-count">
+    Showing <strong>{{c.filteredTests.length}}</strong> test{{c.filteredTests.length !== 1 ? 's' : ''}}
+    <span ng-if="c.searchQuery"> for "<em>{{c.searchQuery}}</em>"</span>
+    <span ng-if="c.activeCategory !== 'all'"> in <em>{{c.activeCategory}}</em></span>
+  </span>
+  <div class="sort-wrap">
+    <label>Sort by:</label>
+    <select ng-model="c.sortBy" ng-change="c.sortTests()" class="sort-select">
+      <option value="name">Name</option>
+      <option value="price_asc">Price: Low to High</option>
+      <option value="price_desc">Price: High to Low</option>
+      <option value="duration">Duration</option>
+    </select>
+  </div>
+</div>
+
+<!-- EMPTY STATE -->
+<div class="empty-state" ng-if="c.filteredTests.length === 0">
+  <div class="empty-icon">]]>🔬<![CDATA[</div>
+  <h3 ng-if="(c.data.tests || []).length === 0">No diagnostic tests found in the database.</h3>
+  <h3 ng-if="(c.data.tests || []).length > 0">No tests match your search.</h3>
+  <p ng-if="(c.data.tests || []).length === 0">
+    Add records to <strong>x_1883080_medica_0_diagnostic_test</strong> and set <strong>Active = true</strong>.
+  </p>
+  <button class="btn-reset" ng-if="(c.data.tests || []).length > 0" ng-click="c.resetFilters()">
+    Clear Filters
+  </button>
+</div>
+
+<!-- TEST CARDS -->
+<div class="tests-grid" ng-if="c.filteredTests.length > 0">
+  <div class="test-card" ng-repeat="test in c.filteredTests">
+    <div class="card-header">
+      <div class="test-icon-wrap">
+        <span class="test-icon">{{c.getCategoryIcon(test.category)}}</span>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-cat">{{test.category || 'General'}}</span>
+        <span class="badge badge-active" ng-if="test.active">Available</span>
+        <span class="badge badge-inactive" ng-if="!test.active">Unavailable</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 class="test-name">{{test.test_name}}</h3>
+      <p class="test-code">Code: <strong>{{test.test_code}}</strong></p>
+      <p class="test-desc">{{c.truncate(test.description, 100)}}</p>
+      <div class="test-meta">
+        <div class="meta-item" ng-if="test.test_duration">
+          <i class="fa fa-clock-o"></i><span>{{test.test_duration}}</span>
+        </div>
+        <div class="meta-item">
+          <i class="fa fa-flask"></i><span>{{test.category || 'General'}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="price-block">
+        <span class="price-label">Price</span>
+        <span class="price-value">${{test.price | number:2}}</span>
+      </div>
+      <button class="btn-book" ng-if="test.active" ng-click="c.bookTest(test)">
+        <i class="fa fa-calendar-plus-o"></i> Book Now
+      </button>
+      <button class="btn-book btn-disabled" ng-if="!test.active" disabled>
+        Not Available
+      </button>
+    </div>
+  </div>
+</div>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>

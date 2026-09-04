@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_public">
+    <sys_public action="DELETE">
+        <active>true</active>
+        <page>Test Catalog</page>
+        <sys_class_name>sys_public</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 10:26:12</sys_created_on>
+        <sys_id>7315c53283834b14a71653b6feaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test Catalog</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_update_name>sys_public_7315c53283834b14a71653b6feaad382</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 10:26:12</sys_updated_on>
+    </sys_public>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</application>
+        <file_path/>
+        <instance_id>2fe5db8cdb35bd90caf99027c59619e9</instance_id>
+        <instance_name>dev181827</instance_name>
+        <name>sys_public_7315c53283834b14a71653b6feaad382</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_public"><sys_public action="INSERT_OR_UPDATE"><active>true</active><page>Test Catalog</page><sys_class_name>sys_public</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-04 10:26:12</sys_created_on><sys_id>7315c53283834b14a71653b6feaad382</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Test Catalog</sys_name><sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package><sys_policy/><sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope><sys_update_name>sys_public_7315c53283834b14a71653b6feaad382</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-04 10:26:12</sys_updated_on></sys_public></record_update>]]></payload>
+        <payload_hash>-645097015</payload_hash>
+        <record_name>Test Catalog</record_name>
+        <reverted_from/>
+        <source>f064a9ee8347c714a71653b6feaad3aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 10:26:13</sys_created_on>
+        <sys_id>b325493283834b14a71653b6feaad399</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a06bf4620c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 10:26:13</sys_updated_on>
+        <type>Public Pages</type>
+        <update_guid>732549325c834b1417798b29343dab98</update_guid>
+        <update_guid_history>732549325c834b1417798b29343dab98:-645097015</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 10:26:33</sys_created_on>
+        <sys_db_object display_value="" name="sys_public">sys_public</sys_db_object>
+        <sys_id>2f389cb719e944658dd55c24444f95d1</sys_id>
+        <sys_metadata>7315c53283834b14a71653b6feaad382</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test Catalog</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_scope_delete display_value="">9e90aa91452340a8ad5131bd83bca639</sys_scope_delete>
+        <sys_update_name>sys_public_7315c53283834b14a71653b6feaad382</sys_update_name>
+        <sys_update_version display_value="sys_public_7315c53283834b14a71653b6feaad382">b325493283834b14a71653b6feaad399</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 10:26:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
