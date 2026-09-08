@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_visibility">
+    <par_dashboard_visibility action="DELETE">
+        <dashboard display_value="Health Reports Dashboard">dd9301078343cb14a71653b6feaad31f</dashboard>
+        <experience display_value="Platform Analytics">08c73d60537101100834ddeeff7b1287</experience>
+        <sys_class_name>par_dashboard_visibility</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 04:57:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a19341078343cb14a71653b6feaad3d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_update_name>par_dashboard_visibility_a19341078343cb14a71653b6feaad3d8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 04:57:43</sys_updated_on>
+    </par_dashboard_visibility>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</application>
+        <file_path/>
+        <instance_id>2fe5db8cdb35bd90caf99027c59619e9</instance_id>
+        <instance_name>dev181827</instance_name>
+        <name>par_dashboard_visibility_a19341078343cb14a71653b6feaad3d8</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_visibility"><par_dashboard_visibility action="INSERT_OR_UPDATE"><dashboard display_value="Health Reports Dashboard">dd9301078343cb14a71653b6feaad31f</dashboard><experience display_value="Platform Analytics">08c73d60537101100834ddeeff7b1287</experience><sys_class_name>par_dashboard_visibility</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-05 04:57:43</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>a19341078343cb14a71653b6feaad3d8</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package><sys_policy/><sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope><sys_update_name>par_dashboard_visibility_a19341078343cb14a71653b6feaad3d8</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-05 04:57:43</sys_updated_on></par_dashboard_visibility></record_update>]]></payload>
+        <payload_hash>-959104723</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>f064a9ee8347c714a71653b6feaad3aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 04:57:43</sys_created_on>
+        <sys_id>259341078343cb14a71653b6feaad3e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a06fedff010000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 04:57:43</sys_updated_on>
+        <type>PAR Dashboard Visibility</type>
+        <update_guid>a1934107aa43cb147639a4383712cae8</update_guid>
+        <update_guid_history>a1934107aa43cb147639a4383712cae8:-959104723</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">88548d478343cb14a71653b6feaad31f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 05:00:53</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_visibility">par_dashboard_visibility</sys_db_object>
+        <sys_id>9af7b20a00bd43ac9b9edd28ccb23c44</sys_id>
+        <sys_metadata>a19341078343cb14a71653b6feaad3d8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_scope_delete display_value="">9e90aa91452340a8ad5131bd83bca639</sys_scope_delete>
+        <sys_update_name>par_dashboard_visibility_a19341078343cb14a71653b6feaad3d8</sys_update_name>
+        <sys_update_version display_value="par_dashboard_visibility_a19341078343cb14a71653b6feaad3d8">259341078343cb14a71653b6feaad3e9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 05:00:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

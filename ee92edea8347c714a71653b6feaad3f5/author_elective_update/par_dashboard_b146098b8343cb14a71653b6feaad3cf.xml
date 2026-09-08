@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard">
+    <par_dashboard action="DELETE">
+        <active>true</active>
+        <base_dashboard/>
+        <certified>false</certified>
+        <description/>
+        <experience/>
+        <grid>48</grid>
+        <name>health456</name>
+        <ready_to_migrate>Not Applicable</ready_to_migrate>
+        <sys_class_name>par_dashboard</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 05:09:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b146098b8343cb14a71653b6feaad3cf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>health456</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_update_name>par_dashboard_b146098b8343cb14a71653b6feaad3cf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 05:09:28</sys_updated_on>
+        <sys_ux_app_config/>
+        <sys_ux_app_route/>
+        <sys_ux_macroponent/>
+        <sys_ux_screen/>
+        <sys_ux_screen_type/>
+    </par_dashboard>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</application>
+        <file_path/>
+        <instance_id>2fe5db8cdb35bd90caf99027c59619e9</instance_id>
+        <instance_name>dev181827</instance_name>
+        <name>par_dashboard_b146098b8343cb14a71653b6feaad3cf</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard"><par_dashboard action="INSERT_OR_UPDATE"><active>true</active><base_dashboard/><certified>false</certified><description/><experience/><grid>48</grid><name>health456</name><ready_to_migrate>Not Applicable</ready_to_migrate><sys_class_name>par_dashboard</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-05 05:09:28</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>b146098b8343cb14a71653b6feaad3cf</sys_id><sys_mod_count>1</sys_mod_count><sys_name>health456</sys_name><sys_overrides/><sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package><sys_policy/><sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope><sys_update_name>par_dashboard_b146098b8343cb14a71653b6feaad3cf</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-05 05:09:28</sys_updated_on><sys_ux_app_config/><sys_ux_app_route/><sys_ux_macroponent/><sys_ux_screen/><sys_ux_screen_type/></par_dashboard></record_update>]]></payload>
+        <payload_hash>83228755</payload_hash>
+        <record_name>health456</record_name>
+        <reverted_from/>
+        <source>915db92383120310a71653b6feaad373</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2026-07-31 15:39:54</sys_created_on>
+        <sys_id>8798c5cf8343cb14a71653b6feaad307</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>19fb8d4fd100000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>PAR Dashboard</type>
+        <update_guid>4798c5cf7443cb14cc436d9e9397d007</update_guid>
+        <update_guid_history>4798c5cf7443cb14cc436d9e9397d007:83228755</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Health Reports Dashboard">a1e4994783c3cb14a71653b6feaad3a0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 06:13:23</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard">par_dashboard</sys_db_object>
+        <sys_id>171e1a3575014c0cb805e34e42601e90</sys_id>
+        <sys_metadata>b146098b8343cb14a71653b6feaad3cf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Health Reports Dashboard</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_scope_delete display_value="">9e90aa91452340a8ad5131bd83bca639</sys_scope_delete>
+        <sys_update_name>par_dashboard_b146098b8343cb14a71653b6feaad3cf</sys_update_name>
+        <sys_update_version display_value="par_dashboard_b146098b8343cb14a71653b6feaad3cf">8798c5cf8343cb14a71653b6feaad307</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 06:13:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

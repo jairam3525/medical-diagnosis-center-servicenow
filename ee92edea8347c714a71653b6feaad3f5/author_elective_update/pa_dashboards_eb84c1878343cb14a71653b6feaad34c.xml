@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_dashboards">
+    <pa_dashboards action="DELETE">
+        <active>true</active>
+        <base_dashboard/>
+        <breakdown_source/>
+        <certified>false</certified>
+        <color/>
+        <description/>
+        <disable_multiple_element>false</disable_multiple_element>
+        <experience_dashboard/>
+        <group/>
+        <groups/>
+        <is_breakdown>false</is_breakdown>
+        <managed_breakdown/>
+        <managed_publisher/>
+        <name>Health</name>
+        <no_bulk_migration>false</no_bulk_migration>
+        <no_tabs>false</no_tabs>
+        <notification_link_label/>
+        <notification_link_url/>
+        <notification_text/>
+        <order/>
+        <owner display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</owner>
+        <ready_to_migrate>Yes</ready_to_migrate>
+        <restrict_to_roles/>
+        <role_override>true</role_override>
+        <roles/>
+        <should_migrate_permissions>false</should_migrate_permissions>
+        <sys_class_name>pa_dashboards</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 05:02:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>eb84c1878343cb14a71653b6feaad34c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Health</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_update_name>pa_dashboards_eb84c1878343cb14a71653b6feaad34c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 05:02:04</sys_updated_on>
+        <users/>
+        <visible_to>2</visible_to>
+    </pa_dashboards>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</application>
+        <file_path/>
+        <instance_id>2fe5db8cdb35bd90caf99027c59619e9</instance_id>
+        <instance_name>dev181827</instance_name>
+        <name>pa_dashboards_eb84c1878343cb14a71653b6feaad34c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_dashboards"><pa_dashboards action="INSERT_OR_UPDATE"><active>true</active><base_dashboard/><breakdown_source/><certified>false</certified><color/><description/><disable_multiple_element>false</disable_multiple_element><experience_dashboard/><group/><groups/><is_breakdown>false</is_breakdown><managed_breakdown/><managed_publisher/><name>Health</name><no_bulk_migration>false</no_bulk_migration><no_tabs>false</no_tabs><notification_link_label/><notification_link_url/><notification_text/><order/><owner display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</owner><ready_to_migrate>Yes</ready_to_migrate><restrict_to_roles/><role_override>true</role_override><roles/><should_migrate_permissions>false</should_migrate_permissions><sys_class_name>pa_dashboards</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-05 05:02:03</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>eb84c1878343cb14a71653b6feaad34c</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Health</sys_name><sys_overrides/><sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package><sys_policy/><sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope><sys_update_name>pa_dashboards_eb84c1878343cb14a71653b6feaad34c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-05 05:02:04</sys_updated_on><users/><visible_to>2</visible_to></pa_dashboards></record_update>]]></payload>
+        <payload_hash>-1608626113</payload_hash>
+        <record_name>Health</record_name>
+        <reverted_from/>
+        <source>915db92383120310a71653b6feaad373</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by/>
+        <sys_created_on>2026-07-31 15:39:54</sys_created_on>
+        <sys_id>0345c10b8343cb14a71653b6feaad3f0</sys_id>
+        <sys_mod_count/>
+        <sys_recorded_at>19fb8d4fd100000000</sys_recorded_at>
+        <sys_updated_by/>
+        <sys_updated_on/>
+        <type>Dashboard</type>
+        <update_guid>cf45c10bb943cb14ae14ece5b3c6d6ef</update_guid>
+        <update_guid_history>cf45c10bb943cb14ae14ece5b3c6d6ef:-1608626113</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Health">0f45c10b8343cb14a71653b6feaad3f0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 05:05:11</sys_created_on>
+        <sys_db_object display_value="" name="pa_dashboards">pa_dashboards</sys_db_object>
+        <sys_id>7969e2ba90c148a184e9d0f8e5d55a61</sys_id>
+        <sys_metadata>eb84c1878343cb14a71653b6feaad34c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Health</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_scope_delete display_value="">9e90aa91452340a8ad5131bd83bca639</sys_scope_delete>
+        <sys_update_name>pa_dashboards_eb84c1878343cb14a71653b6feaad34c</sys_update_name>
+        <sys_update_version display_value="pa_dashboards_eb84c1878343cb14a71653b6feaad34c">0345c10b8343cb14a71653b6feaad3f0</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 05:05:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

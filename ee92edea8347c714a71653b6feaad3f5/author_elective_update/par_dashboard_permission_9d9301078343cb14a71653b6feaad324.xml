@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission">
+    <par_dashboard_permission action="DELETE">
+        <can_read>true</can_read>
+        <can_share>true</can_share>
+        <can_write>true</can_write>
+        <dashboard display_value="Health Reports Dashboard">dd9301078343cb14a71653b6feaad31f</dashboard>
+        <group/>
+        <owner>true</owner>
+        <role/>
+        <sys_class_name>par_dashboard_permission</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 04:57:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9d9301078343cb14a71653b6feaad324</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dd9301078343cb14a71653b6feaad31f</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_update_name>par_dashboard_permission_9d9301078343cb14a71653b6feaad324</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 04:57:42</sys_updated_on>
+        <user display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</user>
+    </par_dashboard_permission>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</application>
+        <file_path/>
+        <instance_id>2fe5db8cdb35bd90caf99027c59619e9</instance_id>
+        <instance_name>dev181827</instance_name>
+        <name>par_dashboard_permission_9d9301078343cb14a71653b6feaad324</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission"><par_dashboard_permission action="INSERT_OR_UPDATE"><can_read>true</can_read><can_share>true</can_share><can_write>true</can_write><dashboard display_value="Health Reports Dashboard">dd9301078343cb14a71653b6feaad31f</dashboard><group/><owner>true</owner><role/><sys_class_name>par_dashboard_permission</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-05 04:57:42</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>9d9301078343cb14a71653b6feaad324</sys_id><sys_mod_count>0</sys_mod_count><sys_name>dd9301078343cb14a71653b6feaad31f</sys_name><sys_overrides/><sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package><sys_policy/><sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope><sys_update_name>par_dashboard_permission_9d9301078343cb14a71653b6feaad324</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-05 04:57:42</sys_updated_on><user display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</user></par_dashboard_permission></record_update>]]></payload>
+        <payload_hash>-2057913927</payload_hash>
+        <record_name>dd9301078343cb14a71653b6feaad31f</record_name>
+        <reverted_from/>
+        <source>f064a9ee8347c714a71653b6feaad3aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 04:57:42</sys_created_on>
+        <sys_id>699341078343cb14a71653b6feaad3ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a06fedfc510000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 04:57:42</sys_updated_on>
+        <type>PAR Dashboard Permission</type>
+        <update_guid>e59341074543cb14c1ae666a548855ab</update_guid>
+        <update_guid_history>e59341074543cb14c1ae666a548855ab:-2057913927</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">88548d478343cb14a71653b6feaad305</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 05:00:53</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_permission">par_dashboard_permission</sys_db_object>
+        <sys_id>1fbe2725b52540d09133d3322f103100</sys_id>
+        <sys_metadata>9d9301078343cb14a71653b6feaad324</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dd9301078343cb14a71653b6feaad31f</sys_name>
+        <sys_package display_value="Medical Diagnosis Center" source="x_2056537_medica_0">ee92edea8347c714a71653b6feaad3f5</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Medical Diagnosis Center">ee92edea8347c714a71653b6feaad3f5</sys_scope>
+        <sys_scope_delete display_value="">9e90aa91452340a8ad5131bd83bca639</sys_scope_delete>
+        <sys_update_name>par_dashboard_permission_9d9301078343cb14a71653b6feaad324</sys_update_name>
+        <sys_update_version display_value="par_dashboard_permission_9d9301078343cb14a71653b6feaad324">699341078343cb14a71653b6feaad3ac</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 05:00:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
