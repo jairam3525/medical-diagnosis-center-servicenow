@@ -1,77 +1,71 @@
 # Medical Diagnostic Center – ServiceNow
 
-A ServiceNow-based Medical Diagnostic Center application designed to manage diagnostic tests, patient appointments, test approvals, and lab reports through a structured workflow.
+![Platform](https://img.shields.io/badge/PLATFORM-ServiceNow-81B5A1?style=flat-square)
+![Application](https://img.shields.io/badge/APPLICATION-Medical%20Diagnostics-00A878?style=flat-square)
+![Scope](https://img.shields.io/badge/SCOPE-Private%20Scope-4CAF50?style=flat-square)
+![Security](https://img.shields.io/badge/SECURITY-Role%20Based-2196F3?style=flat-square)
+![Automation](https://img.shields.io/badge/AUTOMATION-Workflow-FF9800?style=flat-square)
+![Frontend](https://img.shields.io/badge/FRONTEND-Service%20Portal-00A9CE?style=flat-square)
+![Status](https://img.shields.io/badge/PROJECT-COMPLETED-4CAF00?style=flat-square)
 
-## Overview
+---
 
-The Medical Diagnostic Center provides a complete workflow for managing medical diagnostic tests.
+## 🏥 Project Overview
 
-Patients can browse available tests, book appointments, and access their reports. Administrators can manage diagnostic tests, review appointments, approve tests, and complete the workflow.
+The **Medical Diagnostic Center** is a ServiceNow-based application designed to manage the complete workflow of medical diagnostic tests — from test selection and appointment booking to administrator approval, test completion, email notifications, and report generation.
 
-The project is developed as a **Scoped ServiceNow Application** with a focus on workflow automation, data management, and user-friendly interfaces.
+The application combines **ServiceNow backend development, workflow automation, data management, and frontend development** to provide a structured diagnostic test management system.
 
-## Key Features
+---
 
-- Diagnostic test catalog
-- Test search and category filtering
-- Patient appointment booking
-- Appointment approval workflow
-- Appointment status management
-- Automated email notifications
-- Lab report generation
-- Patient-specific report access
-- Role-based access and application security
-- Custom ServiceNow portal interface
+## ✨ Key Features
 
-## Core Tables
+- 🧪 Diagnostic test catalog
+- 🔎 Test search and category filtering
+- 📅 Patient appointment booking
+- ✅ Administrator approval workflow
+- 🔄 Appointment status management
+- 📧 Automated email notifications
+- 📄 Lab report generation
+- 👤 Patient-specific records
+- 🔐 Role-based access control
+- 🎨 Custom Service Portal interface
 
-### Diagnostic Test
-Maintains the diagnostic tests available at the Medical Diagnostic Center, including test name, code, category, description, price, duration, and availability.
+---
 
-### Appointment
-Stores patient booking information and manages the appointment workflow from booking through completion.
+## 🏗️ Core Architecture
 
-### Report
-Stores generated lab reports for completed diagnostic appointments.
+| Table | Purpose |
+|---|---|
+| 🧪 **Diagnostic Test** | Maintains all available diagnostic tests, including category, price, duration, description, and availability. |
+| 📅 **Appointment** | Stores patient booking information and manages the appointment workflow. |
+| 📄 **Report** | Stores generated reports for completed diagnostic tests. |
+| 👤 **Patient** | Maintains unique patient information associated with users. |
 
-### Patient
-Maintains patient information with a unique patient record associated with each user.
+---
 
-## Application Scope
-
-The project is developed within a **private application scope**, providing application-level isolation and security from other ServiceNow applications.
-
-## Technology Stack
-
-- ServiceNow
-- ServiceNow Studio
-- JavaScript
-- GlideRecord
-- ServiceNow Client Scripts
-- ServiceNow Server Scripts
-- Service Portal
-- HTML
-- CSS
-- AngularJS
-- ServiceNow Flow/Workflow concepts
-
-## Project Workflow
+## 🔄 Project Workflow
 
 ```text
 Patient
-   ↓
+   │
+   ▼
 Browse Diagnostic Tests
-   ↓
+   │
+   ▼
 Book Test
-   ↓
+   │
+   ▼
 Appointment Created
-   ↓
-Administrator Reviews
-   ↓
-Appointment Approved
-   ↓
+   │
+   ▼
+Administrator Approval
+   │
+   ▼
 Test Completed
-   ↓
-Lab Report Generated
-   ↓
+   │
+   ▼
+Report Generated
+   │
+   ▼
 Patient Views Report
